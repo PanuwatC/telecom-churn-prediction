@@ -1,0 +1,168 @@
+{
+  "data": {
+    "n_customers": 2154048,
+    "sample_frac": 1.0,
+    "churn_rate": 0.1875,
+    "majority_class_accuracy": 0.8125
+  },
+  "eda": {
+    "churn_rate_regularity_le5": 0.5616,
+    "churn_rate_regularity_ge50": 0.0062,
+    "churn_rate_no_revenue_record": 0.4501,
+    "churn_rate_has_revenue_record": 0.0541,
+    "share_all_usage_missing": 0.2373,
+    "churn_rate_all_usage_missing": 0.5307
+  },
+  "split": {
+    "train": 1507833,
+    "valid": 323107,
+    "test": 323108
+  },
+  "models": [
+    {
+      "model": "Majority class (no model)",
+      "roc_auc": 0.5,
+      "pr_auc": 0.1875,
+      "log_loss": null,
+      "brier": null,
+      "threshold": null,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.8125
+    },
+    {
+      "model": "Rule: fewer active days = higher risk",
+      "roc_auc": 0.8893,
+      "pr_auc": 0.5997,
+      "log_loss": null,
+      "brier": null,
+      "threshold": null,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "accuracy": null
+    },
+    {
+      "model": "Logistic regression",
+      "roc_auc": 0.9295,
+      "pr_auc": 0.6963,
+      "log_loss": 0.2561,
+      "brier": 0.0829,
+      "threshold": 0.3474,
+      "precision": 0.6146,
+      "recall": 0.8021,
+      "f1": 0.696,
+      "accuracy": 0.8686
+    },
+    {
+      "model": "LightGBM (raw features)",
+      "roc_auc": 0.9313,
+      "pr_auc": 0.7034,
+      "log_loss": 0.2515,
+      "brier": 0.0816,
+      "threshold": 0.3298,
+      "precision": 0.6041,
+      "recall": 0.8263,
+      "f1": 0.6979,
+      "accuracy": 0.8659
+    },
+    {
+      "model": "LightGBM (full features)",
+      "roc_auc": 0.9314,
+      "pr_auc": 0.7035,
+      "log_loss": 0.2514,
+      "brier": 0.0816,
+      "threshold": 0.3434,
+      "precision": 0.6095,
+      "recall": 0.8178,
+      "f1": 0.6985,
+      "accuracy": 0.8676
+    }
+  ],
+  "lightgbm_best_iteration": 279,
+  "gains": {
+    "top_10pct": {
+      "churners_captured_pct": 40.9,
+      "lift": 4.09,
+      "churn_rate_in_band": 0.7663
+    },
+    "top_20pct": {
+      "churners_captured_pct": 70.9,
+      "lift": 3.55,
+      "churn_rate_in_band": 0.5641
+    },
+    "top_30pct": {
+      "churners_captured_pct": 89.2,
+      "lift": 2.97,
+      "churn_rate_in_band": 0.3429
+    }
+  },
+  "top_features": [
+    {
+      "feature": "MISS_REGION",
+      "mean_abs_shap": 1.3814,
+      "direction_corr": 0.994
+    },
+    {
+      "feature": "REGULARITY",
+      "mean_abs_shap": 1.2981,
+      "direction_corr": -0.967
+    },
+    {
+      "feature": "REGION",
+      "mean_abs_shap": 0.3978,
+      "direction_corr": null
+    },
+    {
+      "feature": "ACTIVE_RATE",
+      "mean_abs_shap": 0.277,
+      "direction_corr": -0.97
+    },
+    {
+      "feature": "DATA_VOLUME",
+      "mean_abs_shap": 0.0985,
+      "direction_corr": 0.317
+    },
+    {
+      "feature": "TOPUP_AVG",
+      "mean_abs_shap": 0.0881,
+      "direction_corr": 0.521
+    },
+    {
+      "feature": "TOP_PACK",
+      "mean_abs_shap": 0.0764,
+      "direction_corr": null
+    },
+    {
+      "feature": "N_MISSING_USAGE",
+      "mean_abs_shap": 0.0744,
+      "direction_corr": 0.812
+    },
+    {
+      "feature": "ON_NET",
+      "mean_abs_shap": 0.0643,
+      "direction_corr": 0.36
+    },
+    {
+      "feature": "REV_PER_ACTIVE_DAY",
+      "mean_abs_shap": 0.0546,
+      "direction_corr": 0.416
+    }
+  ],
+  "runtime_s": {
+    "load_and_eda_s": 3.7,
+    "feature_engineering_s": 2.4,
+    "logistic_regression_s": 7.4,
+    "lightgbm_raw_s": 11.2,
+    "lightgbm_full_s": 12.2,
+    "total_s": 53.7
+  },
+  "engine": "pyspark",
+  "environment": {
+    "python": "3.12.16",
+    "cores": 12,
+    "pandas": "3.1.0",
+    "lightgbm": "4.7.0"
+  }
+}

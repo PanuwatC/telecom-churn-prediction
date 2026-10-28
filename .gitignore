@@ -1,0 +1,21 @@
+# Data is not redistributable and Train.csv is ~300 MB (above GitHub's 100 MB limit)
+data/
+*.csv
+*.parquet
+
+# Environments and caches
+.venv/
+venv/
+__pycache__/
+.ipynb_checkpoints/
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Slurm logs
+*.out
+*.err
+
+# Editors / OS
+.vscode/
+.DS_Store

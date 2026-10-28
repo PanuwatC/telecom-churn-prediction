@@ -1,0 +1,10 @@
+[NbConvertApp] Converting notebook churn_prediction.ipynb to notebook
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/10/28 23:17:46 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/28 23:17:46 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+26/10/28 23:17:46 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+[Stage 3:>                                                        (0 + 12) / 12][Stage 3:====>                                                    (1 + 11) / 12]                                                                                [Stage 9:>                                                        (0 + 12) / 12]                                                                                [Stage 36:>                                                       (0 + 12) / 12][Stage 36:====>                                                   (1 + 11) / 12][Stage 36:===================>                                     (4 + 8) / 12][Stage 36:==============================================>         (10 + 2) / 12]                                                                                [NbConvertApp] Writing 588268 bytes to churn_prediction.ipynb
